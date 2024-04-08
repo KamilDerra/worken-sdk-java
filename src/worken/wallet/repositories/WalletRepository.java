@@ -4,18 +4,12 @@ import worken.wallet.models.Wallet;
 import worken.wallet.models.WalletBalance;
 import worken.wallet.models.WalletTransaction;
 
-public class WalletRepository {
+public interface WalletRepository {
 
-  WalletTransaction getHistory() {
-    return null;
-  }
+  WalletTransaction getHistory();
 
-  Wallet createWallet() {
-    return null;
-  }
+  Wallet createWallet();
 
-  WalletBalance getBalance() {
-    return null;
-  }
+  WalletBalance getBalance();
 
 }

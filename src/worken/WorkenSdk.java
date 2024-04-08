@@ -1,8 +1,12 @@
 package worken;
 
+import worken.wallet.controllers.WalletHistoryController;
 import worken.wallet.repositories.WalletRepository;
+import worken.wallet.repositories.impl.WalletRepositoryImpl;
 
 public class WorkenSdk {
+
+  private WalletHistoryController walletHistoryController;
 
   private WalletRepository walletRepository;
 
@@ -13,11 +17,12 @@ public class WorkenSdk {
    *
    */
   public void start(String polygonApiKey) {
-    this.walletRepository = new WalletRepository();
+    this.walletHistoryController = new WalletHistoryController();
+    this.walletRepository = new WalletRepositoryImpl(this.walletHistoryController);
   }
 
   public WalletRepository getWalletRepository() {
     return walletRepository;
   }
-  
+
 }
